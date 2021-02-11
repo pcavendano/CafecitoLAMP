@@ -26,6 +26,9 @@ resolve: {
       }
     ],
   },
+  devServer: {
+	  host:'0.0.0.0',
+  },
   output: {
 	filename: '[name].js',
 	path: path.resolve(__dirname, 'dist')
