@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ab755468-f683-4178-8434-6c16ba0e98d9" name="laradock" url="http://laravel.test">
+        <fileTransfer rootFolder="/var/www" accessType="SFTP" host="laravel.test" port="2222" sshConfigId="b4b76cf8-184d-43b3-9a69-3217c6bf8550" sshConfig="root@laravel.test:2222 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
