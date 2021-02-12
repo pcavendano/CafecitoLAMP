@@ -97,12 +97,23 @@ xdebug.remote_host -> host.docker.internal  ok ok ok
 
 Initialize your project 
 
+git config --global user.name "Your Name Here"
+git config --global user.email "your_email@youremail.com"
+
 cd laravel new laravel-laradock-phpstorm
 git init
 git add .
 git  commit -m "first commit"
 git remote add origin git@github.com:LarryEitel/laravel-laradock-phpstorm.git
 git push -u origin master
+
+
+Set up a new or existing repo with SSH for GitHub
+If you are setting up a new repo, add at least one file and commit first. Then, configure the remote and push to GitHub by running:
+
+git remote add origin git@github.com:<username>/<repo-name>.git
+git push -u origin master
+
 
 # /c/_dk/laravel-laradock-phpstorm
 git submodule add https://github.com/LaraDock/laradock.git
