@@ -40,3 +40,7 @@ upts:
 .PHONY:exects
 exects:
 	cd docker && docker-compose exec typescript sh
+
+.PHONY:migrate
+migaret:
+	php artisan migrate:refresh --seed
