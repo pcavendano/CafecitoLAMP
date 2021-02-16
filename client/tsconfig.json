@@ -1,13 +1,40 @@
 {
 	"compilerOptions": {
-		"outDir": "./dist",
-		"target": "es5",
-		"module": "es6",
-		"jsx": "react",
-		"noImplicitAny": false,
+		"outDir": "./dist",		/*root is the default*/
+		"target": "es5",		/*ECMAScript target version, better used the latest*/
+		"module": "esnext",		/*Specify module code generation*/
+		"jsx": "react",			/* specify JSX code generation*/
+		//"lib":[]		/*defaults are dom, es6, dom.iterable,scripthost*/
+		//Enables all strict type-checking options. 
+		//These options are all the commented options below so if set to false, you need to uncomment every option and set accordingly
+		"strict":true,
+		// "noImplicitAny": true, //put strict to true and turn this options to true or false
+		// "strictNullChecks": false,
+		// "strictFunctionTypes": true,
+		// "strictBindCallApply": true,	//for .bind()
+		// "strictPropertyInitialization": true,
+		// "noImplicitThis": true,
+		// "alwaysStrict": true,
 		"allowSyntheticDefaultImports": true,
-		"strict":false,
-		"allowJs": true,
-		"moduleResolution": "node"
+		"allowJs": true,		/*allows js files toi be compiled*/
+		//"checkJs":true		/*it will check it but not compile it. Reports errors in .js files*/
+		"moduleResolution": "node",
+		"sourceMap":true,
+		"removeComments": true,
+		"noEmitOnError": false,	//this will allow you to compile even if there is an error but we usually want it to be true since we use ts to very for errors before compilation
 	  }
 }
+//     "lib": ["dom", "dom.iterable", "esnext"],
+//     "skipLibCheck": true,
+//     "esModuleInterop": true,
+//     "allowSyntheticDefaultImports": true,
+//     "strict": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "module": "esnext",
+//     "moduleResolution": "node",
+//     "resolveJsonModule": true,
+//     "isolatedModules": true,
+//     "noEmit": true,
+//     "jsx": "preserve"
+//   },
+//   "include": ["src"]
