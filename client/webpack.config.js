@@ -30,9 +30,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
-  devtools:'inline-source-map',
+  devtool:'inline-source-map',
   target: 'web',
-  devtool:'eval-source-map',
   devServer: {
 	  host:'0.0.0.0',
   },
