@@ -1,15 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  mode:'development',
+  mode:'production',
   entry: {
     app: path.join(__dirname, 'src', 'index.tsx'),
   },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath:'dist',
   },
   module: {
     rules: [
@@ -30,9 +30,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
-  devtools:'inline-source-map',
   target: 'web',
-  devtool:'eval-source-map',
+  devtool:'none',
   devServer: {
 	  host:'0.0.0.0',
   },
@@ -40,5 +39,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
     }),
+    new CleanPlugin.CleanWebpackPlugin(),
   ],
 };

@@ -1,28 +1,37 @@
 {
 	"compilerOptions": {
 		"outDir": "./dist",		/*root is the default*/
-		"target": "es5",		/*ECMAScript target version, better used the latest*/
-		"module": "esnext",		/*Specify module code generation*/
+		"target": "es6",		/*ECMAScript target version, better used the latest*/
+		"module": "es2015",		//Specify module code generation. Allows ts to import files when it needs it
 		"jsx": "react",			/* specify JSX code generation*/
 		//"lib":[]		/*defaults are dom, es6, dom.iterable,scripthost*/
 		//Enables all strict type-checking options. 
 		//These options are all the commented options below so if set to false, you need to uncomment every option and set accordingly
-		"strict":true,
+		//Strict Type-Checking Options
+		"strict":true,//Important!:Enable all strict type-checking options. Enables all the next options true
+		//IMPORTANT!!! => If any of the next options is set to false strict:false
 		// "noImplicitAny": true, //put strict to true and turn this options to true or false
-		// "strictNullChecks": false,
+		// "strictNullChecks": false, // for html like document.querySelector('buttonb'); if the button migth not exist
 		// "strictFunctionTypes": true,
 		// "strictBindCallApply": true,	//for .bind()
 		// "strictPropertyInitialization": true,
 		// "noImplicitThis": true,
 		// "alwaysStrict": true,
 		"allowSyntheticDefaultImports": true,
-		"allowJs": true,		/*allows js files toi be compiled*/
+		"allowJs": true,//We dont have any js files in this code. Allows js files toi be compiled
 		//"checkJs":true		/*it will check it but not compile it. Reports errors in .js files*/
 		"moduleResolution": "node",
-		"sourceMap":true,
+		"sourceMap":true,//like debugger for chrome
 		"removeComments": true,
-		"noEmitOnError": false,	//this will allow you to compile even if there is an error but we usually want it to be true since we use ts to very for errors before compilation
-	  }
+		"noEmitOnError": false,	//Important!:this will allow you to compile even if there is an error but we usually want it to be true since we use ts to very for errors before compilation
+		//Additional checks
+		//noUnunsedLocals
+		//noUnusedParameters
+		//noimplicitReturns
+		//noFallTroughSwithCases
+		//Important!!! for namespaces, relates to "module"
+		//"outFile":"./dist/bundle.js //its says tsc to concatenate namespaces and put them in the output file
+	 }
 }
 //     "lib": ["dom", "dom.iterable", "esnext"],
 //     "skipLibCheck": true,
