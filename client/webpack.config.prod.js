@@ -1,6 +1,6 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   mode:'production',
@@ -11,6 +11,7 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
+  devtool:false,
   module: {
     rules: [
       {
@@ -31,7 +32,6 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
   },
   target: 'web',
-  devtool:'none',
   devServer: {
 	  host:'0.0.0.0',
   },
@@ -39,6 +39,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
     }),
-    new CleanPlugin.CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
   ],
 };
