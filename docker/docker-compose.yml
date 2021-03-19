@@ -1903,7 +1903,7 @@ services:
   ### typescript #####################################################
   typescript:
     build:
-      context: ../cafecito-gh-pages
+      context: ../cafecito-client
     ports:
       - "4000:3000"
     container_name: typescript
