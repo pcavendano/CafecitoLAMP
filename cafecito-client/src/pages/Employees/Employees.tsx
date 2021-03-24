@@ -1,9 +1,10 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
 import PeopleIcon from '@material-ui/icons/People';
-import { Paper } from '@material-ui/core';
+import { Paper, TableBody } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import EmployeeForm from './EmployeeForm';
+import useTable from '../../components/useTable';
 
 const useStyles = makeStyles((theme) => ({
   pageContent: {
@@ -14,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Employees: React.FC = () => {
   const classes = useStyles();
+  // const {
+  //   TblContainer
+  // } = useTable();
   return (
     <>
       <PageHeader
@@ -23,6 +27,9 @@ const Employees: React.FC = () => {
       />
       <Paper className={classes.pageContent}>
         <EmployeeForm />
+        {/* <TblContainer>
+          <TableBody></TableBody>
+        </TblContainer> */}
       </Paper>
     </>
   );

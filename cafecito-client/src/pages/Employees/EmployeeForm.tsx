@@ -1,9 +1,10 @@
-import React, { ReactEventHandler } from 'react';
+import React, { ReactEventHandler, useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 import { useForm, Form } from '../../components/useForm';
 import Controls from '../../components/controls/Controls';
 import * as employeeService from '../../services/EmployeeService';
 import { validate } from '@material-ui/pickers';
+import api from '../../services/api';
 
 const genderitems = [
   { id: 'male', title: 'Male' },
@@ -54,6 +55,13 @@ const EmployeeForm: React.FC = () => {
     if (fieldValues == values) return Object.values(temp).every((x) => x == '');
   };
 
+  useEffect(() => {
+    api.getAllEmployees().then((res) => {
+      console.log('test get all posts');
+      console.log(res);
+    });
+  }, []);
+
   const {
     values,
     errors,
@@ -65,7 +73,13 @@ const EmployeeForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (validate()) window.alert('test');
+    if (validate()) {
+      api.getAllEmployees().then((res) => {
+        console.log('test get all posts');
+        console.log(res);
+      });
+      window.alert('test');
+    }
   };
 
   return (
