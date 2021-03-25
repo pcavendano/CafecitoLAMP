@@ -1,8 +1,8 @@
 import React from 'react';
 import { Table } from '@material-ui/core';
 
-function useTable(records, headCells) {
-  const TblContainer = (props) => <Table></Table>;
+function useTable() {
+  const TblContainer = () => <Table></Table>;
   return {
     TblContainer,
   };
