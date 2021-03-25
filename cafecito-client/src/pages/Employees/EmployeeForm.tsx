@@ -21,6 +21,7 @@ const initialFValues = {
   departmentId: '',
   hireDate: new Date(),
   isPermanent: true,
+  fecha: '',
 };
 
 interface Temp {
@@ -55,12 +56,12 @@ const EmployeeForm: React.FC = () => {
     if (fieldValues == values) return Object.values(temp).every((x) => x == '');
   };
 
-  useEffect(() => {
-    api.getAllEmployees().then((res) => {
-      console.log('test get all posts');
-      console.log(res);
-    });
-  }, []);
+  // useEffect(() => {
+  //   api.getAllEmployees().then((res) => {
+  //     console.log('test get all posts');
+  //     console.log(res);
+  //   });
+  // }, []);
 
   const {
     values,
@@ -74,11 +75,7 @@ const EmployeeForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validate()) {
-      api.getAllEmployees().then((res) => {
-        console.log('test get all posts');
-        console.log(res);
-      });
-      window.alert('test');
+      api.addEmployee(values).then((res) => {});
     }
   };
 
@@ -124,7 +121,7 @@ const EmployeeForm: React.FC = () => {
           />
           <Controls.Select
             name="departmentId"
-            label="Departement"
+            label="Department"
             value={values.departmentId}
             onChange={handleInputChange}
             //replace with api call to database

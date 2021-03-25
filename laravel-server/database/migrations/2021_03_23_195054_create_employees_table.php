@@ -20,9 +20,9 @@ class CreateEmployeesTable extends Migration
             $table->string('mobile');
             $table->string('city');
             $table->string('gender');
-            $table->string('departement');
-            $table->string('hireDate');
-            $table->string('status');
+            $table->string('departmentId');
+            $table->DateTime('hireDate');
+            $table->boolean('isPermanent');
             $table->timestamps();
         });
     }

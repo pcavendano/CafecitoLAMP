@@ -20,6 +20,7 @@ interface Props {
   departmentId: string;
   hireDate: Date;
   isPermanent: boolean;
+  fecha: string;
 }
 
 interface Temp {

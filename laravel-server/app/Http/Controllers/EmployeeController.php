@@ -30,9 +30,9 @@ class EmployeeController extends Controller
             'mobile'=>'required',
             'city'=>'required',
             'gender'=>'required',
-            'departement'=>'required',
+            'departmentId'=>'required',
             'hireDate'=>'required',
-            'status'=>'required'
+            'isPermanent'=>'required'
         ]);
         $employee = new Employee([
             'fullName'=>$request->fullName,
@@ -40,9 +40,9 @@ class EmployeeController extends Controller
             'mobile'=>$request->mobile,
             'city'=>$request->city,
             'gender'=>$request->gender,
-            'departement'=>$request->departement,
-            'hireDate'=>$request->hireDate,
-            'status'=>$request->status
+            'departmentId'=>$request->departmentId,
+            'hireDate'=>$request->fecha,
+            'isPermanent'=>$request->isPermanent
         ]);
         $employee->save();
         return response()->json([
@@ -71,9 +71,9 @@ class EmployeeController extends Controller
             'mobile'=>'required',
             'city'=>'required',
             'gender'=>'required',
-            'departement'=>'required',
-            'hireDate'=>'required',
-            'status'=>'required'
+            'departmentId'=>'required',
+            'fecha'=>'required',
+            'isPermanent'=>'required'
         ]);
         $employee = Employee::findOrFail($id);
         $employee->fullName = $request->fullName;
@@ -81,12 +81,12 @@ class EmployeeController extends Controller
         $employee->mobile = $request->mobile;
         $employee->city = $request->city;
         $employee->gender = $request->gender;
-        $employee->departement = $request->departement;
-        $employee->hireDate = $request->hireDate;
-        $employee->status = $request->status;
+        $employee->departmentId = $request->departmentId;
+        $employee->hireDate = $request->fecha;
+        $employee->isPermanent = $request->isPermanent;
         $employee->save();
         return response()->json([
-            'data'=>'E mployee updated'
+            'data'=>'Employee updated'
         ]);
     }
 

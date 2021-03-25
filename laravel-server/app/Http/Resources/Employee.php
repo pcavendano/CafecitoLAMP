@@ -21,9 +21,9 @@ class Employee extends JsonResource
             'mobile' => $this->mobile,
             'city' => $this->city,
             'gender' => $this->gender,
-            'departement' => $this->departement,
+            'departmentId' => $this->departmentId,
             'hireDate' => $this->hireDate,
-            'status' => $this->status,
+            'isPermanent' => $this->isPermanent,
         ];
     }
 }

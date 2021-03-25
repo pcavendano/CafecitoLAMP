@@ -18,6 +18,6 @@ const useStyles = makeStyles({
 
 const SideMenu: React.FC = (props) => {
   const classes = useStyles();
-  return <div className={classes.sideMenu}>Hello back</div>;
+  return <div className={classes.sideMenu}> Pedro</div>;
 };
 export default SideMenu;
